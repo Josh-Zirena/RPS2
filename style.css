@@ -1,0 +1,39 @@
+body {
+    background: radial-gradient(#93ddaf, #56615d);
+	font-family: monospace;
+	text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: all 1s;
+  
+}
+
+img {
+	border: 1px solid #000000;
+	margin: 10px;
+    height: auto; 
+    width: auto; 
+    max-width: 240px; 
+    max-height: 240px;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  min-height: 400px;
+}
+
+
