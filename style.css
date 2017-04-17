@@ -1,5 +1,5 @@
 body {
-    background: radial-gradient(#93ddaf, #56615d);
+    background: radial-gradient(#ededed, #fff);
 	font-family: monospace;
 	text-align: center;
 }
@@ -16,15 +16,15 @@ p {
 img:hover {
   transform: scale(1.1);
   transition: all 1s;
-  
+
 }
 
 img {
 	border: 1px solid #000000;
 	margin: 10px;
-    height: auto; 
-    width: auto; 
-    max-width: 240px; 
+    height: auto;
+    width: auto;
+    max-width: 240px;
     max-height: 240px;
 }
 
@@ -36,4 +36,9 @@ img {
   min-height: 400px;
 }
 
-
+.pick {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}

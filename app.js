@@ -2,11 +2,14 @@
 
 var score = 0;
 var player_choice;
+let countDown = 3;
+let counterInt;
+let gameState = 'selection';
 
 var numbers_to_words = {
 	"0": "Rock",
 	"1": "Paper",
-	"2": "Scissor"
+	"2": "Scissors"
 }
 
 var cpu_choice = {
@@ -45,8 +48,11 @@ var paragraph = document.querySelector('p');
 var assignClick = function(tag, pos) {
 	//assign a click listener
 	tag.addEventListener('click', function() {
+		if(gameState != 'selection') return;
 		//set a player's choice
 		player_choice = pos;
+		gameState = 'result';
+		Counter();
 		//give feedback to the cpuChoice
 		cpu_choice.init();
 		paragraph.innerText = "The computer chose: " + cpu_choice.text;
@@ -66,8 +72,28 @@ var images = {
     }
   }
 }
- 
-images.init();
 
- 
- 
+function Counter(){
+	counterInt = setInterval(function(){
+		document.getElementById('countdown').innerText = countDown--;
+		if(countDown < 0){clearInterval(counterInt); ShowResult();}
+	}, 1000)
+}
+function SwitchScreen(x, y){
+	let show = document.getElementById(x);
+	let hide = document.getElementById(y);
+	show.className = '';
+	hide.className = 'hide';
+}
+function ShowResult(){
+	let cPick = document.getElementById('cimg').src = 'images/'+ cpu_choice.text + '.jpg';
+	let pPick = document.getElementById('pimg').src = 'images/'+ numbers_to_words[player_choice] + '.jpg';
+	SwitchScreen('result', 'selection');
+}
+function Retry(){
+	SwitchScreen('selection', 'result');
+	countDown = 3;
+	gameState = 'selection';
+}
+
+images.init();
