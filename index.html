@@ -1,23 +1,42 @@
 <html>
-<head> 
+<head>
 	<link rel = "stylesheet" href = "style.css">
 </head>
 <body>
 	<div class = "container">
+		<h1 id="score">Score: 0 - 0</h1>
+		<div id="selection">
 
-		<h1> Choose your weapon! </h1>
-		
-		<img src = "images/rock.jpg" alt = "rock">
-		<img src = "images/paper.jpg" alt = "paper">
-		<img src = "images/scissors.jpg" alt = "scissors">
-		<p></p>
-	
+			<h1> Choose your weapon! </h1>
+
+			<img src = "images/rock.jpg" alt = "rock">
+			<img src = "images/paper.jpg" alt = "paper">
+			<img src = "images/scissors.jpg" alt = "scissors">
+			<h1 id='countdown'></h1>
+
+		</div>
+
+		<div id='result' class="hide">
+			<div class="pick">
+				<h1>You</h1>
+				<img id='pimg' src="images/rock.jpg" alt="">
+			</div>
+			<div class="pick">
+				<h1>Computer</h1>
+				<img id='cimg' src="images/paper.jpg" alt="">
+			</div>
+			<p></p>
+			<button onclick="Retry()">Retry</button>
+		</div>
 	</div>
 
 <script src = "app.js"> </script>
 </body>
 
 </html>
+<<<<<<< HEAD
+=======
 
 <!--- testing new branch --->
 
+>>>>>>> origin/master
